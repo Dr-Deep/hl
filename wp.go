@@ -459,8 +459,8 @@ func wpFunCall(vars []ast.Expr, ce *ast.CallExpr, postCond ast.Expr) (preCond as
 		return
 	}
 
-	// 事後条件 postCond 内の oParams を us で置換
-	postCond, err = subst(postCond, oParams, us)
+	// 事後条件 postCond 内の vars を us で置換
+	postCond, err = subst(postCond, vars, us)
 	if err != nil {
 		return
 	}
